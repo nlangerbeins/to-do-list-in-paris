@@ -66,11 +66,11 @@ function App() {
       <div>
         <button onClick={() => addToList(id)}>Add to my to Do List</button>
       </div>
-      {toDoList.map((element, index) => {
-        const {id} = element;
+      {toDoList.map((element) => {
+        const {id, titel} = element;
 
         return (
-          <div key={index}>
+          <div key={id}>
             <ul>
               <li>{element} <button onClick={() => removeElement(id)}>Delete</button></li>
             </ul>
