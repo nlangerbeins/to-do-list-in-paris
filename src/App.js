@@ -36,15 +36,31 @@ function App() {
 
   // to Do List
   const [toDoList, setToDoList] = useState([]); 
+
   const addToList = (id) => {
-    setToDoList (place => [...place, 'visit ' + titel]);
-    console.log(toDoList);
+    if(!toDoList.find( item => item.id === id)) {
+      let placesArray = [...toDoList];
+
+      toDoList.forEach( item => {
+        if (item.id === id) {
+          const clickedPlace = {...item};
+          placesArray.push(clickedPlace)
+        }
+      })
+      setToDoList(placesArray)
+    }
   }
+
+
+  // const addToList = (id) => {
+  //   setToDoList (place => [...place, 'visit ' + titel]);
+  //   console.log(toDoList);
+  // }
 
   //Deleting an item from to Do List
   const [visited, setVisited] = useState(toDoList);
   const removeElement = (id) => {
-    let newList = visited.filter(place => place.id !== id);
+    let newList = visited.filter(item => item.id !== id);
     setVisited(newList);
   }
  
@@ -66,6 +82,7 @@ function App() {
       <div>
         <button onClick={() => addToList(id)}>Add to my to Do List</button>
       </div>
+
       {toDoList.map((element) => {
         const {id, titel} = element;
 
