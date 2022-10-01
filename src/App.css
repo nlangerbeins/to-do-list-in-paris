@@ -1,0 +1,140 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-color: #0e0e0e;
+}
+
+.wrapper {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+h1 {
+    display: flex;
+    justify-content: center;
+    margin: 20px 10px 40px;
+    font-size: 50px;
+    color: #E5E5E5;
+    font-family: 'Noto Serif', serif;
+    text-shadow: 1px 2px 5px #FCA311;
+}
+
+.slides_wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+
+.btn_back, .btn_next {
+    padding: 15px 45px;
+    font-size: 16px;
+    border: none;
+    background: #FCA311;
+    color: #FFF;
+    cursor: pointer;
+    font-family: 'Noto Serif', serif;
+}
+
+.slides {
+    max-width: 100%;
+    border: 1px solid #E5E5E5;
+}
+
+img {
+    display: block;
+    width: 100%;
+}
+
+h2 {
+    display: flex;
+    justify-content: center;
+    margin: 50px 10px 20px;
+    font-size: 30px;
+    color: #E5E5E5;
+    font-family: 'Noto Serif', serif;
+}
+
+.description_wrapper {
+    line-height: 26px;
+    color: #E5E5E5;
+    font-family: 'Noto Serif', serif;
+}
+
+
+.btn_read {
+    border: none;
+    color: #FCA311;
+    background: none;
+    font-size: 16px;
+    margin: 0 5px;
+    font-style: italic;
+    cursor: pointer;
+    font-family: 'Noto Serif', serif;
+}
+
+.btn_add__wrapper {
+    display: flex;
+    justify-content: center;
+    margin: 40px 0;
+}
+
+.btn_add {
+    padding: 15px 45px;
+    font-size: 16px;
+    border: none;
+    background: #FCA311;
+    color: #FFF;
+    cursor: pointer;
+    font-family: 'Noto Serif', serif;
+}
+
+.list_wrapper {
+    display: flex;
+    justify-content: center;
+}
+
+.list {
+    color: #FFF;
+    list-style-type: none;
+    font-family: 'Noto Serif', serif;
+    max-width: 700px;
+    width: 100%;
+}
+
+.list li {
+    margin: 0 0 15px 0;
+    padding: 10px;
+    border-bottom: 1px solid rgba(252, 163, 17, 0.3);
+    display: flex;
+    justify-content: space-between;
+}
+
+.btn_deleteItem {
+    border: none;
+    color: #FCA311;
+    background: none;
+    font-size: 16px;
+    margin: 0 5px;
+    font-style: italic;
+    cursor: pointer;
+    font-family: 'Noto Serif', serif;
+}
+
+.btn_deleteAll__wrapper {
+    display: flex;
+    justify-content: center;
+    margin: 20px;
+}
+
+.btn_deleteAll {
+    padding: 15px 45px;
+    font-size: 16px;
+    border: none;
+    background: #fff;
+    color: #FCA311;
+    cursor: pointer;
+    font-family: 'Noto Serif', serif;
+}

@@ -22,7 +22,7 @@ export const data = [
         id: 2,
         image: imgTwo,
         titel: 'Arc de Triomphe',
-        description: '',
+        description: 'An instantly recognizable symbol of Paris, the colossal Arc de Triomphe stands at the epicenter of Place Charles de Gaulle, where 12 of the city’s busiest avenues converge. The Napoleon-commissioned monument, adorned with high-relief sculptures depicting sword-wielding soldiers and inscribed with the names of generals and battles, celebrates French military victories and remembers all those who have fought on behalf of France. The top of the arch, accessible via 284 steps, affords superb views over all of Paris.',
         showMore: false
     }, 
 

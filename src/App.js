@@ -38,10 +38,10 @@ function App() {
   const [toDoList, setToDoList] = useState([]); 
 
   const addToList = (id) => {
-    if(!toDoList.find( item => item.id === id)) {
+    if(!toDoList.find (item => item.id === id)) {
       let placesArray = [...toDoList];
 
-      toDoList.forEach( item => {
+      data.forEach (item => {
         if (item.id === id) {
           const clickedPlace = {...item};
           placesArray.push(clickedPlace)
@@ -53,7 +53,7 @@ function App() {
 
 
   // const addToList = (id) => {
-  //   setToDoList (place => [...place, 'visit ' + titel]);
+  //   setToDoList (place => [...place, titel]);
   //   console.log(toDoList);
   // }
 
@@ -66,36 +66,38 @@ function App() {
  
 
   return (
-    <div>
+    <div className='wrapper'>
       <h1>Top 10 Things to Do in Paris</h1>
-      <div>
-        <button onClick={back}>back</button>
-        <img src={image} alt='paris' width="700px"></img>
-        <button onClick={next}>next</button>
+      <div className='slides_wrapper'>
+        <button onClick={back} className='btn_back'>back</button>
+        <div className='slides'>
+          <img src={image} alt='paris' width="700px" ></img>
+        </div>
+        <button onClick={next} className='btn_next'>next</button>
       </div>
-      <h2>{id} - {titel}</h2>
-      <div>
+      <h2>{id}. {titel}</h2>
+      <div className='description_wrapper'>
         <p>{showMore ? description : description.substring(0, 220) + '...'}
-          <button onClick={() => readMoreClick(data[place])}>{showMore ? 'Read less' : 'Read more'}</button>
+          <button onClick={() => readMoreClick(data[place])} className='btn_read'>{showMore ? 'Read less' : 'Read more'}</button>
         </p>
       </div>
-      <div>
-        <button onClick={() => addToList(id)}>Add to my to Do List</button>
+      <div className='btn_add__wrapper'>
+        <button onClick={() => addToList(id)} className='btn_add'>Add to my to Do List</button>
       </div>
 
       {toDoList.map((element) => {
         const {id, titel} = element;
 
         return (
-          <div key={id}>
-            <ul>
-              <li>{element} <button onClick={() => removeElement(id)}>Delete</button></li>
+          <div  className='list_wrapper'>
+            <ul className='list'>
+              <li key={id}>{element} <button onClick={() => removeElement(id)} className='btn_deleteItem'>Delete</button></li>
             </ul>
           </div>
         )
       })}
-      <div>
-        <button onClick={() => setToDoList([])}>Delete All</button>
+      <div className='btn_deleteAll__wrapper'>
+        <button onClick={() => setToDoList([])} className='btn_deleteAll'>Delete All</button>
       </div>
     </div>
   );
