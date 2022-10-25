@@ -8,7 +8,7 @@ function App() {
 
   //Read more button
   const [readMore, setReadMore] = useState(false);
-  const readMoreClick = (element) => {
+  const readMoreOnClick = (element) => {
     element.showMore = !element.showMore;
     setReadMore(!readMore);
   }
@@ -58,10 +58,9 @@ function App() {
   // }
 
   //Deleting an item from to Do List
-  const [visited, setVisited] = useState(toDoList);
-  const removeElement = (id) => {
-    let newList = visited.filter(item => item.id !== id);
-    setVisited(newList);
+  const removeElement = (item) => {
+    let newList = toDoList.filter(toDo => toDo.id !== item.id);
+    setToDoList(newList);
   }
  
 
@@ -78,24 +77,23 @@ function App() {
       <h2>{id}. {titel}</h2>
       <div className='description_wrapper'>
         <p>{showMore ? description : description.substring(0, 220) + '...'}
-          <button onClick={() => readMoreClick(data[place])} className='btn_read'>{showMore ? 'Read less' : 'Read more'}</button>
+          <button onClick={() => readMoreOnClick(data[place])} className='btn_read'>{showMore ? 'Read less' : 'Read more'}</button>
         </p>
       </div>
       <div className='btn_add__wrapper'>
         <button onClick={() => addToList(id)} className='btn_add'>Add to my to Do List</button>
       </div>
+      <div  className='list_wrapper'>
+        <ul className='list'>
+          {
+            toDoList.map(item => 
+              <li key={item.id}>{item.titel} 
+                <button onClick={() => removeElement(item)} className='btn_deleteItem'>Delete</button>
+              </li>)
+            }
+          </ul>
+        </div>
 
-      {toDoList.map((element) => {
-        const {id, titel} = element;
-
-        return (
-          <div  className='list_wrapper'>
-            <ul className='list'>
-              <li key={id}>{element} <button onClick={() => removeElement(id)} className='btn_deleteItem'>Delete</button></li>
-            </ul>
-          </div>
-        )
-      })}
       <div className='btn_deleteAll__wrapper'>
         <button onClick={() => setToDoList([])} className='btn_deleteAll'>Delete All</button>
       </div>
